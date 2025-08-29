@@ -1,0 +1,24 @@
+{
+    "name": "@platforma-open/milaboratories.software-salmon",
+    "version": "1.0.1",
+    "description": "Salmon software package for Platforma Backend",
+    "scripts": {
+      "build": "pl-pkg build",
+      "prepublishOnly": "pl-pkg prepublish"
+    },
+    "files": [
+      "dist/"
+    ],
+    "block-software": {
+      "entrypoints": {
+        "main":   { "reference": "@platforma-open/milaboratories.software-salmon.1.10.0/dist/tengo/software/main.sw.json" },
+        "salmon": { "reference": "@platforma-open/milaboratories.software-salmon.1.10.0/dist/tengo/software/main.sw.json" }
+      }
+    },
+    "license": "UNLICENSED",
+    "devDependencies": {
+      "@platforma-open/milaboratories.software-salmon.1.10.0": "workspace:*",
+      "@platforma-sdk/package-builder": "catalog:"
+    }
+  }
+  

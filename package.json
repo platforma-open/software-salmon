@@ -1,38 +1,21 @@
 {
-  "name": "@platforma-open/milaboratories.software-salmon",
-  "version": "1.0.1",
-  "description": "Salmon software package for Platforma Backend",
+  "name": "software-salmon",
   "scripts": {
-    "build": "true",
-    "pkg:build": "rm -rf dld && ./scripts/build.sh 1.10.0",
-    "pkg:publish": "./scripts/publish.sh 1.10.0",
-    "prepublishOnly": "npm run pkg:build && npm run pkg:publish"
-  },
-  "files": [
-    "dist/"
-  ],
-  "block-software": {
-    "artifacts": {
-      "1.10.0": {
-        "registry": "platforma-open",
-        "version": "1.10.0",
-        "type": "binary",
-        "roots": {
-          "linux-x64": "./dld/salmon-1.10.0-linux-x64",
-          "linux-aarch64": "./dld/salmon-1.10.0-linux-aarch64",
-          "macosx-x64": "./dld/salmon-1.10.0-macosx-x64",
-          "macosx-aarch64": "./dld/salmon-1.10.0-macosx-aarch64",
-          "windows-x64": "./dld/salmon-1.10.0-windows-x64"
-        }
-      } 
-    },
-    "entrypoints": {
-      "salmon":     { "binary": { "artifact": "1.10.0", "cmd": ["{pkg}/bin/salmon"] } },
-      "salmon-1.10.0":     { "binary": { "artifact": "1.10.0", "cmd": ["{pkg}/bin/salmon"] } }
-    }
+    "cleanup": "pnpm -r cleanup",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "update-sdk": "pl-blocks-deps-updater"
   },
   "license": "UNLICENSED",
+  "packageManager": "pnpm@9.14.4",
+  "engines": {
+    "node": ">=20"
+  },
   "devDependencies": {
-    "@platforma-sdk/package-builder": "^2.15.0"
+    "turbo": "catalog:",
+    "@changesets/cli": "catalog:",
+    "@platforma-sdk/blocks-deps-updater": "catalog:"
   }
 }
