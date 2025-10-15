@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.software-salmon.1.10.0",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Salmon software package for Platforma Backend",
   "scripts": {
     "build": "../scripts/build.sh 1.10.0",
@@ -18,7 +18,9 @@
             "dockerfile": "Dockerfile",
             "context": "./dld/linux-x64"
           },
-          "cmd": ["salmon"]
+          "cmd": [
+            "salmon"
+          ]
         },
         "binary": {
           "artifact": {

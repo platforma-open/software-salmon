@@ -1,6 +1,6 @@
 {
   "name": "@platforma-open/milaboratories.software-salmon",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Salmon software package for Platforma Backend",
   "scripts": {
     "build": "pl-pkg build",
